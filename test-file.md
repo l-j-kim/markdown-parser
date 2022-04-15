@@ -1,4 +1,3 @@
 # Title
-
-[link1](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574(v=vs.85))
-[link2]()
+[Link1](https://www.convertunits.com/molarmass/(NH4)2SO4)
+[Link2](https://www.convertunits.com/molarmass/Mg(NO3)2)
