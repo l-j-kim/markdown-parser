@@ -13,11 +13,45 @@ public class MarkdownParseTest {    //class header
     }
 
     @Test
-    public void getLinksTest() throws IOException {
+    public void getLinksTestFile() throws IOException {
         Path pathes = Path.of("test-file.md");
         String contents = Files.readString(pathes);
 
         List<String> expected = List.of("https://something.com", "some-page.html");
+        List<String> actual = MarkdownParse.getLinks(contents);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getLinksTest2() throws IOException {
+        Path pathes = Path.of("test-2.md");
+        String contents = Files.readString(pathes);
+
+        List<String> expected = List.of("https://www.convertunits.com/molarmass/(NH4)2SO4", 
+       "https://www.convertunits.com/molarmass/Mg(NO3)2");
+        List<String> actual = MarkdownParse.getLinks(contents);
+
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void getLinksTest3() throws IOException {
+        Path pathes = Path.of("test-3.md");
+        String contents = Files.readString(pathes);
+
+        List<String> expected = List.of("https://something.com", "https://canvas.ucsd.edu/");
+        List<String> actual = MarkdownParse.getLinks(contents);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getLinksTest4() throws IOException {
+        Path pathes = Path.of("test-4.md");
+        String contents = Files.readString(pathes);
+
+        List<String> expected = List.of("canvas.ucsd.edu");
         List<String> actual = MarkdownParse.getLinks(contents);
 
         assertEquals(expected, actual);
