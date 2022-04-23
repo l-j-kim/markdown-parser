@@ -1,4 +1,5 @@
 //https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
+//https://stackoverflow.com/questions/8141698/split-using-a-bracket
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +11,7 @@ public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
+
         String[] divider = markdown.split("\\[");
         int openBracket = 0;
         int closeBracket; 
@@ -27,6 +29,8 @@ public class MarkdownParse {
         }
         return toReturn;
     }
+    
+    
 
 
     public static void main(String[] args) throws IOException {
@@ -34,5 +38,6 @@ public class MarkdownParse {
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
+
     }
 }
