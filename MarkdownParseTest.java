@@ -47,7 +47,7 @@ public class MarkdownParseTest {            //class header
         assertEquals(expected, actual);
     }
 
-    @Test
+    /* @Test
     public void getLinksTest4() throws IOException {
         Path pathes = Path.of("test-4.md");
         String contents = Files.readString(pathes);
@@ -56,7 +56,7 @@ public class MarkdownParseTest {            //class header
         List<String> actual = MarkdownParse.getLinks(contents);
 
         assertEquals(expected, actual);
-    }
+    } */
 
     @Test
     public void getLinksTestFile2() throws IOException {
